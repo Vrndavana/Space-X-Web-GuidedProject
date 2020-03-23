@@ -66,3 +66,26 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+/* Tests
+1) Test that the component renders with empty props (when component mounts)
+    - props.error: ""
+    - props.missions: []
+2) Test that the component shows an error message when passed an error string
+    - props.error: "some error message string"
+    - Check that the error div renders
+    - Check (assert) that the missions list does NOT render
+    // Happy path
+3) Test that the missions list is rendered when there is no error, and when
+props.missions has data
+*/
+
+import React from "react";
+import {render} from "@testing-library/React";
+import MissionsList from "./MissionsList";
+
+
+test("renders without crashing", () => {
+  render(<MissionsList missions={[]} />); 
+});

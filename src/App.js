@@ -14,7 +14,7 @@ export default function App() {
     setIsFetchingData(true);
     fetchMissions()
       .then(res => {
-        console.log(res);
+        // console.log(res); <- commented out to clear test terminal
         setIsFetchingData(false);
         setMissions(res.data);
       })
